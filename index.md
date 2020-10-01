@@ -23,7 +23,7 @@ Using Spatial Reinforcement Learning to Build Forest Wildfire Dynamics Models Fr
 https://www.frontiersin.org/articles/10.3389/fict.2018.00006/full
 
 
-![Image](https://create.piktochart.com/output/49388563-my-visual)
+![Image](my-visual_49388563.png)
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
