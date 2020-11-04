@@ -1,5 +1,6 @@
-## Welcome to GitHub Pages
 Problem Statement: How do we most accurately model and predict the spread of wildfires in a given region using machine learning techniques?
+
+<a href="page1.html">Page 2</a>
 
 Data Sources: NASA Wildfire Data, UCI Forest Fire Data, Kaggle Forest Fire and Wildfire Data
 Data: 
