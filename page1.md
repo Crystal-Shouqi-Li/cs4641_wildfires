@@ -16,6 +16,8 @@ Inspired by a reading of a 2019 paper on Segmentation of Fire and Smoke from Inf
 **DATA:**
 
 Our input data was a series of labelled images from the NASA MODIS sensor on the Aqua and Terra satellite. We chose these images from satellites since they have a high resolution and can be downloaded in the form of RBG Jpegs. This made them ideal for the kind of image analysis we wanted to perform on them. The images ranged from featuring fires and/or smoke to regular satellite images that did not include any kind of fire-related natural disasters. 
+![Image](forestFireDataSet.png)
+![Image](notForesetFire.png)
 
 **PROCESS:**
 In order to be able to feed the images through the algorithms, we needed to reduce the images into numbers.To start we standardized the images so that they were all the same size and then selected a portion of images from our dataset to run our unsupervised learning algorithms. We didn't use all of the data set in order to save computation power.
