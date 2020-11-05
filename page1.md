@@ -22,7 +22,12 @@ In order to be able to feed the images through the algorithms, we needed to redu
 
 We then used EM and Kmeans to segment the colors in our images, firstly trying to cluster by warm tones featured in fires, but also by the color and directional component of smoke, as smoke has a distinct directional component (like a straight streak) that differentiates it from fog or sand storms. 
 
-After applying EM to the manitoba image in our forest fire section.
+ORIGINAL(manitoba)
+![Image](originalManitoba.png)
+
+AFTER: (applied EM)
+![Image](manitobaEM.png)
+
 
 Discussion/ Challenges
 As we have not yet started the supervised stage of our project, our main challenge has been to get the images clustered in a way that makes classifying them as either photos of forest fires or not the easiest it can be. In addition, trying to process and find smoke in images proved to be somewhat difficult and error prone. Another somewhat less pressing issue is the difference between forest fires and other natural phenomenon such as volcanic eruptions, or intentional burning practices.
