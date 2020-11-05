@@ -33,6 +33,11 @@ We then used EM and Kmeans to segment the colors in our images, firstly trying t
 ![Image](kMeans2.png)
 ![Image](kMeans1.png)
 
+In our first attempt to apply Kmeans to our images we used the pixel colors as our features. As a result, when we clustered the images into two clusters (to simulate the binary fire vs not fire classifcation) we got two unequal clusters that were worse than just randomly assigning half the data into one cluster and the other half into another. 
+
+![Image](badCluster0.png)
+![Image](badCluster1.png)
+
 
 **Discussion/ Challenges**
 As we have not yet started the supervised stage of our project, our main challenge has been to get the images clustered in a way that makes classifying them as either photos of forest fires or not the easiest it can be. In addition, trying to process and find smoke in images proved to be somewhat difficult and error prone. Another somewhat less pressing issue is the difference between forest fires and other natural phenomenon such as volcanic eruptions, or intentional burning practices.
