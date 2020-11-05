@@ -23,7 +23,7 @@ In order to be able to feed the images through the algorithms, we needed to redu
 We then used EM and Kmeans to segment the colors in our images, firstly trying to cluster by warm tones featured in fires, but also by the color and directional component of smoke, as smoke has a distinct directional component (like a straight streak) that differentiates it from fog or sand storms. 
 
 ORIGINAL:(manitoba)
-![Image](originalManitoba.png)
+![Image](origManitoba.png)
 
 
 AFTER: (applied EM)
