@@ -27,6 +27,9 @@ We then used EM and Kmeans to segment the colors in our images, firstly trying t
 **ORIGINAL:(manitoba)**
 ![Image](origManitoba.png) 
 **AFTER: (applied EM)** ![Image](manitobaEM.png)
+**After Applying two different techniques of Kmeans**
+![Image](kMeans2.png)
+![Image](kMeans1.png)
 
 
 **Discussion/ Challenges**
