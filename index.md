@@ -2,8 +2,6 @@ Problem Statement: How do we most accurately model and predict the spread of wil
 
 <a href="page1.md">initial plan</a>
 
-**Data Sources: NASA Wildfire Data, UCI Forest Fire Data, Kaggle Forest Fire and Wildfire Data**
-
 **Introduction:**
 There were 50,477 wildfires in 2019 and 58,083 wildfires in 2018, according to the National Interagency Fire Center (NIFC). Around 4.7 million acres were burned in 2019 and  8.8 million acres burned in 2018. Wildfires are of high exigence for the damage they do to wildlife and air quality, and the threat they pose to human lives and nature preservation.
 
