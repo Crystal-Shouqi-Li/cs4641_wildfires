@@ -60,15 +60,26 @@ for i in range(len(kpredictions)):
 ![Image](badCluster1.png)
 
 After adding in some code for feature detection we got slighly better results, but the clustering was still about as good as random. 
-```model = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(224, 224, 3))
+```model = tf.keras.applications.MobileNetV2(include_top=False, weights="imagenet", input_shape=(224, 224, 3))
 predictions = model.predict(images.reshape(-1, 224, 224, 3))
 pred_images = predictions.reshape(images.shape[0], -1)
 ```
-![Image](okayCluster1.png)
-![Image](okayCluster2.png)
 
 Then, after pre-processing the images by segmenting them out with Expectation Maximum we got clustering results that were better than average.
 Where, out of the 15 images, only 5 were clustered incorrectly in Cluster 0. And in Cluster 1, out of the 23 images, 9 were clustered incorrectly. Whereas in the previous classifications, in the 21 images 10 were clustered incorrectly. On average, it appears like applying the EM segmentation increased the accuracy by around 33%. 
+
+
+```emImages = []
+
+for image in images1:
+  (H, W, N) = image.shape
+  data = image.reshape((H * W, N))
+  data_centers = np.mean(data, 0)
+  data_scale = np.std(data, 0)
+  data = pre.scale(data)
+  theImage = EM(data, sunset_, W, H, data_centers, data_scale)
+  emImages.append(theImage)
+```
 
 ![Image](cluster0.png)
 ![Image](cluster1.png)
