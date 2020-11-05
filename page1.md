@@ -7,7 +7,7 @@ Problem Statement: How do we most accurately model and predict the spread of wil
 **Introduction:**
 There were 50,477 wildfires in 2019 and 58,083 wildfires in 2018, according to the National Interagency Fire Center (NIFC). Around 4.7 million acres were burned in 2019 and  8.8 million acres burned in 2018. Wildfires are of high exigence for the damage they do to wildlife and air quality, and the threat they pose to human lives and nature preservation.
 
-In our project proposal we set out to use NASA data to help in the prediction and analysis of forest fires. For our second touchpoint we will be discussing our unsupervised learning techniques. We implemented two algorithms(expectation–maximization and kmeans) and applied them to the images in order to preprocess and detect the features. Along with clustering them into two groups in order to try and see their accuracy in seperating out images with and without fire. We paln to use the algorithms and results found in the satellite images as a pre-processing step for the supervised portion of our project.
+In our project proposal we set out to use NASA data to help in the prediction and analysis of forest fires. For our second touchpoint we will be discussing our unsupervised learning techniques. We implemented two algorithms(expectation–maximization and kmeans) and applied them to the images in order to preprocess and detect the features. Along with clustering them into two groups in order to try and see their accuracy in seperating out images with and without fire. We plan to use the algorithms and results found in the satellite images as a pre-processing step for the supervised portion of our project.
 
 **Methods:**
 
