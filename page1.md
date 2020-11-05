@@ -34,9 +34,39 @@ We then used EM and Kmeans to segment the colors in our images, firstly trying t
 ![Image](kMeans1.png)
 
 In our first attempt to apply Kmeans to our images we used the pixel colors as our features. As a result, when we clustered the images into two clusters (to simulate the binary fire vs not fire classifcation) we got two unequal clusters that were worse than just randomly assigning half the data into one cluster and the other half into another. 
+```sil = []
+kl = []
+kmax = 10
 
+for k in range(2, kmax+1):
+  kmeans2 = KMeans(n_clusters = k).fit(pred_images)
+  labels = kmeans2.labels_
+  sil.append(silhouette_score(pred_images, labels, metric = 'euclidean'))
+  kl.append(k)
+  
+  k = 2
+kmodel = KMeans(n_clusters=k, n_jobs=-1, random_state=728)
+kmodel.fit(pred_images)
+kpredictions = kmodel.predict(pred_images)
+for i in range(k):
+	os.makedirs("output\cluster" + str(i))
+for i in range(len(kpredictions)):
+  if i < len(paths_1):
+    shutil.copy2(paths_1[i], "output\cluster"+str(kpredictions[i]))
+  else:
+    shutil.copy2(paths_2[i%len(paths_1)], "output\cluster"+str(kpredictions[i]))
+```
 ![Image](badCluster0.png)
 ![Image](badCluster1.png)
+
+After adding in some code for feature detection we got slighly better results, but the clustering was still about as good as random. 
+```model = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(224, 224, 3))
+predictions = model.predict(images.reshape(-1, 224, 224, 3))
+pred_images = predictions.reshape(images.shape[0], -1)
+```
+
+Then, after pre-processing the images by segmenting them out with Expectation Maximum we got clustering results that were better than average.
+
 
 
 **Discussion/ Challenges**
