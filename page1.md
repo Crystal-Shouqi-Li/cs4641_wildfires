@@ -64,10 +64,14 @@ After adding in some code for feature detection we got slighly better results, b
 predictions = model.predict(images.reshape(-1, 224, 224, 3))
 pred_images = predictions.reshape(images.shape[0], -1)
 ```
+![Image](okayCluster1.png)
+![Image](okayCluster2.png)
 
 Then, after pre-processing the images by segmenting them out with Expectation Maximum we got clustering results that were better than average.
+Where, out of the 15 images, only 5 were clustered incorrectly in Cluster 0. And in Cluster 1, out of the 23 images, 9 were clustered incorrectly. Whereas in the previous classifications, in the 21 images 10 were clustered incorrectly. On average, it appears like applying the EM segmentation increased the accuracy by around 33%. 
 
-
+![Image](cluster0.png)
+![Image](cluster1.png)
 
 **Discussion/ Challenges**
 As we have not yet started the supervised stage of our project, our main challenge has been to get the images clustered in a way that makes classifying them as either photos of forest fires or not the easiest it can be. In addition, trying to process and find smoke in images proved to be somewhat difficult and error prone. Another somewhat less pressing issue is the difference between forest fires and other natural phenomenon such as volcanic eruptions, or intentional burning practices.
