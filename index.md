@@ -23,9 +23,11 @@ In order to be able to feed the images through the algorithms, we needed to redu
 We then used EM and Kmeans to segment the colors in our images, firstly trying to cluster by warm tones featured in fires, but also by the color of smoke that differentiates it from fog, sandstorms, or terrain which might have a gray hue as well.
 
 **ORIGINAL:(manitoba)**
+
 ![Image](origManitoba.png) 
 
 **AFTER: (applied EM)** 
+
 ![Image](manitobaEM.png)
 
 **After Applying two different techniques of Kmeans**
