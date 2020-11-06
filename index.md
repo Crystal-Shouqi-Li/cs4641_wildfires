@@ -32,7 +32,7 @@ We then used EM and Kmeans to segment the colors in our images, firstly trying t
 
 **After Applying two different techniques of Kmeans**
 
-![Image](kmeans3_after.png)
+1[Image](kmeans3_after.PNG)
 ![Image](kMeans1.png)
 
 In our first attempt to apply Kmeans to our images we used the pixel colors as our features. As a result, when we clustered the images into two clusters (to simulate the binary fire vs not fire classifcation) we got two unequal clusters that were worse than just randomly assigning half the data into one cluster and the other half into another. 
