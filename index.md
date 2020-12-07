@@ -131,7 +131,22 @@ As there are many neural networks that are trained to detect fires in images wit
  
 Data augmentation did, however, significantly aid in the expansion of our dataset and significantly increased the model’s accuracy. As our dataset was already so small, we were never able to surpass 80% accuracy, as we hoped to be able to do with a balanced two-category classification problem, however, our methods did significantly increase the accuracy of the model, and with more time, we are confident we would have been able to achieve higher accuracies by adding new novel data, and applying our data augmentation techniques to this data.
  
+ 
+**References** 
 https://www.mdpi.com/2076-3263/10/3/105/pdf
  https://link.springer.com/article/10.1007/s13753-019-00233-1 
+ Data Sources: NASA Wildfire Data, UCI Forest Fire Data, Kaggle Forest Fire and Wildfire Data Data: UCI Forest Fire dataset: https://archive.ics.uci.edu/ml/datasets/Forest+Fires
+
+Kaggle datasets: https://www.kaggle.com/elikplim/forest-fires-data-set https://www.kaggle.com/rtatman/188-million-us-wildfires
+
+NASA has data: https://earthdata.nasa.gov/learn/toolkits/wildfires
+
+Proposed Approaches: Convolutional Neural Networks, Spatial Reinforcement Learning
+
+A Machine Learning-Based Approach for Wildfire Susceptibility Mapping. The Case Study of the Liguria Region in Italy Deals with using ML to predict land cover/vegetation and model wildfires based on what the land is like
+
+Forest Fire Susceptibility Modeling Using a Convolutional Neural Network for Yunnan Province of China Basically asserts that CNNs are more accurate than random forests (used above) https://link.springer.com/article/10.1007/s13753-019-00233-1
+
+Using Spatial Reinforcement Learning to Build Forest Wildfire Dynamics Models From Satellite Images https://www.frontiersin.org/articles/10.3389/fict.2018.00006/full
 
 
