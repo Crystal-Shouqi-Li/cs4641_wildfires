@@ -5,7 +5,7 @@ Problem Statement: How do we most accurately model and predict the spread of wil
 **Introduction:**
 There were 50,477 wildfires in 2019 and 58,083 wildfires in 2018, according to the National Interagency Fire Center (NIFC). Around 4.7 million acres were burned in 2019 and  8.8 million acres burned in 2018. Wildfires are of high exigence for the damage they do to wildlife and air quality, and the threat they pose to human lives and nature preservation.
 
-In our project proposal we set out to use NASA data to help in the prediction and analysis of forest fires. For our second touchpoint we will be discussing our unsupervised learning techniques. We implemented two algorithms(expectation–maximization and kmeans) and applied them to the images in order to preprocess and detect the features. Along with clustering them into two groups in order to try and see their accuracy in seperating out images with and without fire. We plan to use the algorithms and results found in the satellite images as a pre-processing step for the supervised portion of our project.
+In our project proposal we set out to use NASA data to help in the prediction and analysis of forest fires. During this project we implemented three algorithms. We implemented expectation–maximization and kmeans to the images in order to preprocess and detect the features for the unsupervised portion of the project. For the third supervised portion we implemented a CNN along with data augmentation. 
 
 **Methods:**
 
@@ -95,9 +95,28 @@ for image in images1:
 ![Image](cluster1.png)
 
 **Discussion/ Challenges**
-As we have not yet started the supervised stage of our project, our main challenge has been to get the images clustered in a way that makes classifying them as either photos of forest fires or not the easiest it can be. In addition, trying to process and find smoke in images proved to be somewhat difficult and error prone. Another somewhat less pressing issue is the difference between forest fires and other natural phenomenon such as volcanic eruptions, or intentional burning practices. A problem to consider going forward will also be combining the segmentation results from the smoke and fire detection methods in a way that is effective for supervised learning.
+Our main challenge for this portion was getting the images clustered in a way that makes classifying them as either photos of forest fires or not the easiest it can be. In addition, trying to process and find smoke in images proved to be somewhat difficult and error prone. Another somewhat less pressing issue is the difference between forest fires and other natural phenomenon such as volcanic eruptions, or intentional burning practices. A problem to consider going forward will also be combining the segmentation results from the smoke and fire detection methods in a way that is effective for supervised learning.
 
-As you can see, here are some of the examples of clustering algorithms we have run on our NASA satellite images.
 
-We hope that the visual differences and contrast between elements that could reasonably be fire or smoke and other elements in the images will help us to classify the images with a boolean output in the supervised learning portion of our project, which we are hoping to do using a neural net.
+**Supervised Portion**
+**Methods:**
+Working off of Zhang et al and Toni et al’s papers on machine learning in wildfire detection, we used Tensorflow to implement our CNN. We scraped 202 images from the NASA MODIS sensor on the Aqua and Terra satellite, labelled them as having wildfires or not for classification purposes, and mounted them to our Colab notebook to use in our CNN. Our convolutional base is a stack of Convolutional 2D layers and MaxPooling2D layers, and we added several dense layers on top. We got peak accuracy with these layers at 76.216% accuracy with this configuration.  Our training dataset is built off of only 202 satellite images, so we find this accuracy to be somewhat encouraging even though it is not comprehensive for the dataset we hoped to train on. 
+In order to train a CNN that worked specifically on satellite images, we used the data augmentation techniques of horizontal and vertical flipping, rotating, cropping, adding Gaussian noise, and adjusting brightness. This augmented our base imageset by a factor of 6. 
+ 
+**Results:**
+We were able to achieve a 76.216% accuracy with our hyperparameter tuning, layer configuration, and data augmentation. As we trained on a base dataset including only 100 images in each category of wildfire and non-wildfire images, we feel these results are quite impressive for such a small training set. In addition, we were able to accomplish a 6% increase in accuracy simply through our data augmentation. We feel this is significant and speaks to the strength of our model’s architecture and the techniques used, despite not reaching our original goal accuracy of 80%. 
+ 
+**Discussion:**
+Our largest hurdle in the supervised portion of this project was data collection. We quickly realized we would need many more images than we had collected in order to successfully train our model.  We explored a variety of techniques for data collection, including researching open source image databases for use in computer vision projects, CIFAR10 style data libraries, and manually web scraping the images we wanted ourselves. However, we still struggled to collect enough high-quality data to result in high accuracies.
+ 
+We specifically wanted to train a CNN for satellite images, so this also made our data collection more difficult, as data sources are limited and often have these images in difficult formats. The NASA website layout also made image scraping more difficult than traditional web-scraping methods (like for example, downloading a thousand images of lilies off of Google images). 
+ 
+As there are many neural networks that are trained to detect fires in images with high accuracy, we hope that our satellite image specific model will add something a little unique to these efforts, and we will also be publishing our training and testing image sets on our public git repository for future work on this topic, as collecting our dataset was a significant portion of this battle. 
+ 
+Data augmentation did, however, significantly aid in the expansion of our dataset and significantly increased the model’s accuracy. As our dataset was already so small, we were never able to surpass 80% accuracy, as we hoped to be able to do with a balanced two-category classification problem, however, our methods did significantly increase the accuracy of the model, and with more time, we are confident we would have been able to achieve higher accuracies by adding new novel data, and applying our data augmentation techniques to this data.
+ 
+References: list containing at least three references, preferably peer reviewed.
+https://www.mdpi.com/2076-3263/10/3/105/pdf
+ https://link.springer.com/article/10.1007/s13753-019-00233-1 
+
 
