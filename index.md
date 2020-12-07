@@ -98,7 +98,9 @@ for image in images1:
 Our main challenge for this portion was getting the images clustered in a way that makes classifying them as either photos of forest fires or not the easiest it can be. In addition, trying to process and find smoke in images proved to be somewhat difficult and error prone. Another somewhat less pressing issue is the difference between forest fires and other natural phenomenon such as volcanic eruptions, or intentional burning practices. A problem to consider going forward will also be combining the segmentation results from the smoke and fire detection methods in a way that is effective for supervised learning.
 
 
-**Supervised Portion**
+****Supervised Portion****
+
+
 **Methods:**
 Working off of Zhang et al and Toni et al’s papers on machine learning in wildfire detection, we used Tensorflow to implement our CNN. We scraped 202 images from the NASA MODIS sensor on the Aqua and Terra satellite, labelled them as having wildfires or not for classification purposes, and mounted them to our Colab notebook to use in our CNN. Our convolutional base is a stack of Convolutional 2D layers and MaxPooling2D layers, and we added several dense layers on top. We got peak accuracy with these layers at 76.216% accuracy with this configuration.  Our training dataset is built off of only 202 satellite images, so we find this accuracy to be somewhat encouraging even though it is not comprehensive for the dataset we hoped to train on. 
 In order to train a CNN that worked specifically on satellite images, we used the data augmentation techniques of horizontal and vertical flipping, rotating, cropping, adding Gaussian noise, and adjusting brightness. This augmented our base imageset by a factor of 6. 
