@@ -131,7 +131,6 @@ As there are many neural networks that are trained to detect fires in images wit
  
 Data augmentation did, however, significantly aid in the expansion of our dataset and significantly increased the model’s accuracy. As our dataset was already so small, we were never able to surpass 80% accuracy, as we hoped to be able to do with a balanced two-category classification problem, however, our methods did significantly increase the accuracy of the model, and with more time, we are confident we would have been able to achieve higher accuracies by adding new novel data, and applying our data augmentation techniques to this data.
  
-References: list containing at least three references, preferably peer reviewed.
 https://www.mdpi.com/2076-3263/10/3/105/pdf
  https://link.springer.com/article/10.1007/s13753-019-00233-1 
 
