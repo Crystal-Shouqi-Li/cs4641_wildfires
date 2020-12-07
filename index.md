@@ -116,7 +116,9 @@ In order to train a CNN that worked specifically on satellite images, we used th
  
 **Results:**
 We were able to achieve a 76.216% accuracy with our hyperparameter tuning, layer configuration, and data augmentation. As we trained on a base dataset including only 100 images in each category of wildfire and non-wildfire images, we feel these results are quite impressive for such a small training set. In addition, we were able to accomplish a 6% increase in accuracy simply through our data augmentation. We feel this is significant and speaks to the strength of our model’s architecture and the techniques used, despite not reaching our original goal accuracy of 80%. 
+
 ![Image](CNN.png)
+
 ![Image](results.png)
 
  
