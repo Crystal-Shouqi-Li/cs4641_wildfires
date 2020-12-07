@@ -7,6 +7,9 @@ There were 50,477 wildfires in 2019 and 58,083 wildfires in 2018, according to t
 
 In our project proposal we set out to use NASA data to help in the prediction and analysis of forest fires. During this project we implemented three algorithms. We implemented expectation–maximization and kmeans to the images in order to preprocess and detect the features for the unsupervised portion of the project. For the third supervised portion we implemented a CNN along with data augmentation. 
 
+****Unsupervised Portion****
+
+
 **Methods:**
 
 Inspired by a reading of a 2019 paper on Segmentation of Fire and Smoke from Infra-Red Videos and a 2013 paper on flame segmentation based on flame pixel identification, we wanted to use clustering to find patterns in images to aid in the detection of forest fires. Additionally, we performed segmentation based on smoke pixel identification. Both of these methods on their own fall prone to false positives; we performed segmentation separately considering both with the goal of later combining the segmentation results from both approaches to more fully utilize the potential of satellite imagery in identifying the presence of a wildfire.
@@ -104,9 +107,18 @@ Our main challenge for this portion was getting the images clustered in a way th
 **Methods:**
 Working off of Zhang et al and Toni et al’s papers on machine learning in wildfire detection, we used Tensorflow to implement our CNN. We scraped 202 images from the NASA MODIS sensor on the Aqua and Terra satellite, labelled them as having wildfires or not for classification purposes, and mounted them to our Colab notebook to use in our CNN. Our convolutional base is a stack of Convolutional 2D layers and MaxPooling2D layers, and we added several dense layers on top. We got peak accuracy with these layers at 76.216% accuracy with this configuration.  Our training dataset is built off of only 202 satellite images, so we find this accuracy to be somewhat encouraging even though it is not comprehensive for the dataset we hoped to train on. 
 In order to train a CNN that worked specifically on satellite images, we used the data augmentation techniques of horizontal and vertical flipping, rotating, cropping, adding Gaussian noise, and adjusting brightness. This augmented our base imageset by a factor of 6. 
+![Image](DA5.png)
+![Image](DA4.png)
+![Image](DA3.png)
+![Image](DA2.png)
+![Image](DA1.png)
+
  
 **Results:**
 We were able to achieve a 76.216% accuracy with our hyperparameter tuning, layer configuration, and data augmentation. As we trained on a base dataset including only 100 images in each category of wildfire and non-wildfire images, we feel these results are quite impressive for such a small training set. In addition, we were able to accomplish a 6% increase in accuracy simply through our data augmentation. We feel this is significant and speaks to the strength of our model’s architecture and the techniques used, despite not reaching our original goal accuracy of 80%. 
+![Image](CNN.png)
+![Image](results.png)
+
  
 **Discussion:**
 Our largest hurdle in the supervised portion of this project was data collection. We quickly realized we would need many more images than we had collected in order to successfully train our model.  We explored a variety of techniques for data collection, including researching open source image databases for use in computer vision projects, CIFAR10 style data libraries, and manually web scraping the images we wanted ourselves. However, we still struggled to collect enough high-quality data to result in high accuracies.
